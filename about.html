@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Shannondale Shortlist</title>
+<meta name="description" content="Meet Lorelai & Michael, the Shannondale neighbors behind the Shortlist — and why they built it.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .about-wrap { max-width:820px; margin:0 auto; padding:4rem 2rem 5rem; }
+
+  .about-story {
+    font-size:1.05rem; color:var(--slate);
+    line-height:1.85; font-weight:300;
+  }
+  .about-story p { margin-bottom:1.5rem; }
+  .about-story strong { color:var(--charcoal); font-weight:500; }
+
+  .about-pull {
+    font-family:'Playfair Display',serif;
+    font-size:1.5rem; color:var(--forest);
+    line-height:1.45; font-weight:600;
+    font-style:italic;
+    border-left:4px solid var(--gold);
+    padding:1.25rem 1.75rem;
+    margin:2.5rem 0;
+    background:rgba(196,151,58,0.05);
+    border-radius:0 8px 8px 0;
+  }
+
+  .founders-card {
+    background:var(--cream);
+    border-radius:12px; padding:2.5rem;
+    border:1.5px solid var(--border);
+    margin:3rem 0;
+    display:flex; gap:2rem; align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .founders-avatars { display:flex; gap:-0.5rem; flex-shrink:0; }
+  .founder-avatar {
+    width:72px; height:72px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-size:1.5rem; font-weight:700; color:white;
+    border:3px solid white;
+  }
+  .founder-avatar.l { background:linear-gradient(135deg,var(--forest),var(--forest-light)); }
+  .founder-avatar.m { background:linear-gradient(135deg,#8B5E10,var(--gold)); margin-left:-16px; }
+
+  .founders-info {}
+  .founders-names {
+    font-family:'Playfair Display',serif;
+    font-size:1.25rem; font-weight:600;
+    color:var(--charcoal); margin-bottom:0.25rem;
+  }
+  .founders-title {
+    font-size:0.8rem; color:var(--gold);
+    letter-spacing:0.08em; text-transform:uppercase;
+    font-weight:500; margin-bottom:0.75rem;
+  }
+  .founders-bio {
+    font-size:0.9rem; color:var(--slate);
+    line-height:1.75; font-weight:300;
+  }
+
+  .values-section { margin:4rem 0; }
+  .values-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.25rem; margin-top:2rem;
+  }
+  .value-card {
+    background:white; border-radius:8px;
+    padding:1.5rem; border:1px solid var(--border);
+  }
+  .value-icon { font-size:1.5rem; margin-bottom:0.75rem; }
+  .value-title {
+    font-family:'Playfair Display',serif;
+    font-size:1rem; font-weight:600;
+    color:var(--forest); margin-bottom:0.4rem;
+  }
+  .value-desc { font-size:0.85rem; color:var(--slate); line-height:1.65; font-weight:300; }
+
+  .about-cta {
+    background:var(--forest); border-radius:12px;
+    padding:3rem; text-align:center; margin-top:4rem;
+  }
+  .about-cta h3 {
+    font-family:'Playfair Display',serif;
+    font-size:1.75rem; color:var(--cream);
+    font-weight:600; margin-bottom:0.75rem;
+  }
+  .about-cta p {
+    font-size:0.95rem; color:rgba(247,243,236,0.65);
+    margin-bottom:2rem; line-height:1.7; font-weight:300;
+  }
+  .about-cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+
+  @media(max-width:600px){
+    .founders-card { flex-direction:column; }
+    .about-pull { font-size:1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Shannondale Shortlist</span>
+      <span class="nav-logo-tagline">Harpers Ferry Area</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="directory.html">Find a Pro</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="join.html" class="nav-cta">Join the List</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-eyebrow">Our Story</div>
+  <h1>Built by <em>Neighbors,</em><br>for Neighbors</h1>
+  <p>The Shannondale Shortlist started with a frustration most people in this community know well — and a simple idea to fix it.</p>
+</section>
+
+<div class="about-wrap">
+
+  <!-- FOUNDER STORY -->
+  <div class="about-story">
+
+    <p>If you've lived in Shannondale, Harpers Ferry, or anywhere in the Eastern Panhandle for more than a minute, you've probably posted something like this to Facebook:</p>
+
+    <div class="about-pull">
+      "Does anyone know a good plumber around here? Need help ASAP."
+    </div>
+
+    <p>You get 30 responses. Half of them are for someone's cousin who "does great work." Two of the phone numbers are disconnected. One person shows up three weeks late and ghosts you after the estimate. Another doesn't carry insurance and you don't find out until after they've started.</p>
+
+    <p>It's not that there aren't great contractors in this area — <strong>there absolutely are.</strong> The problem is that finding them has always relied on luck, persistence, and knowing the right people. That's frustrating when you're a busy professional, a retiree managing an aging home, or an Airbnb owner trying to keep things running smoothly from a distance.</p>
+
+    <p>We know this firsthand. We've been Shannondale residents for years. We've had the contractors who ghost. We've had the ones who show up without the right equipment. We've also found the ones who are genuinely excellent — and noticed they have no online presence, no way for new neighbors to find them, and no platform that reflects the quality of their work.</p>
+
+    <p><strong>That's why we built the Shannondale Shortlist.</strong></p>
+
+    <p>Not as a tech company. Not as a marketing platform. Just as neighbors who wanted to create the thing they'd always wished existed — a carefully curated, community-rooted directory of people you can actually trust.</p>
+
+    <p>Every provider on this list has been reviewed personally. We check licenses and insurance where applicable. We call references. We ask our neighbors. And for the providers we've hired ourselves — the ones we'd stake our own reputation on — we give them our Founder's Pick, with a personal note from us explaining exactly why.</p>
+
+    <p>This will never be a place where you can pay to get listed. It will never be driven by algorithms or ad revenue. It's a community resource — built on trust, maintained by real people, and dedicated to this corner of West Virginia we're proud to call home.</p>
+
+  </div>
+
+  <!-- FOUNDERS CARD -->
+  <div class="founders-card">
+    <div class="founders-avatars">
+      <div class="founder-avatar l">L</div>
+      <div class="founder-avatar m">M</div>
+    </div>
+    <div class="founders-info">
+      <div class="founders-names">Lorelai &amp; Michael</div>
+      <div class="founders-title">Founders, Shannondale Shortlist</div>
+      <p class="founders-bio">We're Shannondale residents who got tired of the contractor guessing game and decided to do something about it. The Shortlist is our small contribution to a community we genuinely love. If you know a contractor who deserves to be here — or have feedback on how we can do this better — we'd love to hear from you.</p>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div class="values-section">
+    <div class="section-label">What We Stand For</div>
+    <h2 class="section-title">Our Commitments to You</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <div class="value-title">Honest Vetting</div>
+        <p class="value-desc">We're transparent about exactly what was and wasn't verified for every listing. No implied guarantees. No fine print surprises.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🚫</div>
+        <div class="value-title">No Pay to Play</div>
+        <p class="value-desc">You cannot buy your way onto this list. Every listing is earned. Provider fees, if ever introduced, will never affect placement or badge status.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🏡</div>
+        <div class="value-title">Community First</div>
+        <p class="value-desc">The Community Trusted tier exists because great local providers deserve to be found — even if they don't have a license or insurance on file.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📍</div>
+        <div class="value-title">Genuinely Local</div>
+        <p class="value-desc">This is not a national platform with a local filter. It's built by people who live here, for people who live here.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="about-cta">
+    <h3>Want to Get Involved?</h3>
+    <p>Know a great contractor who should be on the Shortlist? Want to vouch for a Community Trusted provider? Or just have thoughts on how to make this better? We genuinely want to hear from you.</p>
+    <div class="about-cta-btns">
+      <a href="contact.html" class="btn-primary">Send Us a Message</a>
+      <a href="directory.html" class="btn-secondary">Browse the Directory</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-section">
+  <div class="disclaimer-inner">
+    <p class="disclaimer-text">Shannondale Shortlist reviews contractor applications and collects documentation in good faith. Listings represent information provided at time of application and independently reviewed where possible. Shannondale Shortlist does not guarantee the quality, licensure, or performance of any listed provider. Homeowners are encouraged to verify credentials independently, request written contracts, and perform their own due diligence before hiring.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Shannondale Shortlist</div>
+        <div class="footer-tagline">Only the good ones make the list.</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Directory</h4>
+          <ul>
+            <li><a href="directory.html">Find a Pro</a></li>
+            <li><a href="directory.html">All Categories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>For Providers</h4>
+          <ul>
+            <li><a href="join.html">Apply to Join</a></li>
+            <li><a href="how-it-works.html">How Vetting Works</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://facebook.com" target="_blank">Facebook Group</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Shannondale Shortlist · Harpers Ferry, WV</span>
+      <span>Privacy Policy · Terms of Use</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('main-nav').classList.toggle('nav-mobile-open');
+  });
+</script>
+</body>
+</html>

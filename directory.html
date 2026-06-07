@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find a Pro — Shannondale Shortlist</title>
+<meta name="description" content="Browse trusted local contractors and service providers for the Harpers Ferry, Shannondale, and Eastern Panhandle area.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .directory-wrap { max-width:1100px; margin:0 auto; padding:3rem 2rem 5rem; }
+  .directory-header {
+    display:flex; justify-content:space-between;
+    align-items:baseline; margin-bottom:2rem; flex-wrap:wrap; gap:1rem;
+  }
+  .directory-count { font-size:0.85rem; color:var(--slate); }
+
+  /* No results */
+  .no-results {
+    text-align:center; padding:4rem 2rem;
+    color:var(--slate); display:none;
+    grid-column:1/-1;
+  }
+  .no-results p { font-size:1rem; margin-top:0.5rem; }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Shannondale Shortlist</span>
+      <span class="nav-logo-tagline">Harpers Ferry Area</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="directory.html" class="active">Find a Pro</a></li>
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="join.html" class="nav-cta">Join the List</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-eyebrow">The Directory</div>
+  <h1>Find a <em>Trusted</em> Local Pro</h1>
+  <p>Every provider here has been personally reviewed, neighbor-vouched, or both. Browse by category or search for exactly what you need.</p>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span>✓</span> Personally reviewed</div>
+  <div class="trust-item"><span>✓</span> License &amp; insurance on file where applicable</div>
+  <div class="trust-item"><span>✓</span> Neighbor-vouched</div>
+  <div class="trust-item"><span>✓</span> No paid placements</div>
+</div>
+
+<!-- SEARCH + FILTER -->
+<section class="search-section">
+  <div class="search-inner">
+    <span class="search-label">Search the Shortlist</span>
+    <div class="search-row">
+      <input class="search-input" id="search-input" type="text" placeholder="Search by name, service, or keyword…">
+      <select class="search-select" id="area-filter">
+        <option value="">All Areas</option>
+        <option>Shannondale</option>
+        <option>Harpers Ferry</option>
+        <option>Charles Town</option>
+        <option>Shepherdstown</option>
+        <option>Martinsburg</option>
+        <option>Berkeley Springs</option>
+        <option>Eastern Panhandle Wide</option>
+      </select>
+      <button class="search-btn" id="clear-btn">Clear</button>
+    </div>
+    <div class="category-pills">
+      <div class="pill active" data-cat="all">All</div>
+      <div class="pill" data-cat="handyman">Handyman</div>
+      <div class="pill" data-cat="plumbing">Plumbing</div>
+      <div class="pill" data-cat="electrical">Electrical</div>
+      <div class="pill" data-cat="hvac">HVAC</div>
+      <div class="pill" data-cat="landscaping">Landscaping</div>
+      <div class="pill" data-cat="cleaning">Cleaning</div>
+      <div class="pill" data-cat="hauling">Hauling &amp; Removal</div>
+      <div class="pill" data-cat="painting">Painting</div>
+      <div class="pill" data-cat="roofing">Roofing</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTORY -->
+<div class="directory-wrap">
+  <div class="directory-header">
+    <div>
+      <div class="section-label">Shortlisted Providers</div>
+      <div style="font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:600; color:var(--forest);">All Trusted Providers</div>
+    </div>
+    <div class="directory-count" id="result-count">Showing all providers</div>
+  </div>
+
+  <div class="directory-grid" id="provider-grid">
+
+    <!-- FOUNDER'S PICK -->
+    <div class="card founders-pick"
+         data-cat="landscaping"
+         data-areas="shannondale harpers ferry"
+         data-name="danny torres danny's lawn care landscaping lawn care">
+      <div class="card-tier-bar founders"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-avatar" style="background:linear-gradient(135deg,#8B5E10,#C4973A);">DT</div>
+          <div class="card-info">
+            <div class="card-name">Danny Torres</div>
+            <div class="card-business">Danny's Lawn Care</div>
+            <span class="card-category">Landscaping &amp; Lawn Care</span>
+          </div>
+        </div>
+        <p class="card-bio">The most reliable lawn care in Shannondale — fair prices, consistent schedule, and genuinely takes pride in his work. Has been caring for community yards for 7 years running.</p>
+        <div class="card-badges">
+          <span class="badge badge-founders">⭐ Founder's Pick</span>
+          <span class="badge badge-community">★ Community Trusted</span>
+          <span class="badge badge-local">◆ Local Resident</span>
+          <span class="badge badge-responsive">⟳ Responsive Pro</span>
+        </div>
+        <div class="founders-quote">
+          <div class="founders-quote-label">⭐ Founder's Personal Recommendation</div>
+          <div class="founders-quote-text">"Danny has taken care of my lawn for three years and I wouldn't trade him for anything. He's dependable, affordable, and genuinely cares about the work."</div>
+          <div class="founders-quote-sig">— Lorelai, Founder of Shannondale Shortlist</div>
+        </div>
+        <div class="card-footer">
+          <div class="card-area">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Shannondale · Harpers Ferry
+          </div>
+          <button class="card-contact">Contact</button>
+        </div>
+        <div class="card-member">On the Shortlist since April 2025</div>
+      </div>
+    </div>
+
+    <!-- VERIFIED PRO: Plumbing -->
+    <div class="card"
+         data-cat="plumbing"
+         data-areas="harpers ferry shannondale charles town"
+         data-name="robert hawkins hawkins home services plumbing well pump">
+      <div class="card-tier-bar"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-avatar" style="background:linear-gradient(135deg,#2C4A3E,#3d6b5c);">RH</div>
+          <div class="card-info">
+            <div class="card-name">Robert Hawkins</div>
+            <div class="card-business">Hawkins Home Services</div>
+            <span class="card-category">Plumbing</span>
+          </div>
+        </div>
+        <p class="card-bio">30 years of residential plumbing experience in Jefferson County. Specializes in older home systems, well pumps, and emergency repairs. Same-day response when available.</p>
+        <div class="card-badges">
+          <span class="badge badge-verified">✓ Verified Pro</span>
+          <span class="badge badge-insured">✓ Licensed &amp; Insured</span>
+          <span class="badge badge-local">◆ Local Resident</span>
+          <span class="badge badge-emergency">⚡ Emergency Available</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-area">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Harpers Ferry · Shannondale · Charles Town
+          </div>
+          <button class="card-contact">Contact</button>
+        </div>
+        <div class="card-member">On the Shortlist since March 2025</div>
+      </div>
+    </div>
+
+    <!-- VERIFIED PRO: Cleaning -->
+    <div class="card"
+         data-cat="cleaning"
+         data-areas="shannondale harpers ferry shepherdstown"
+         data-name="maria lawson blue ridge clean cleaning airbnb turnover">
+      <div class="card-tier-bar"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-avatar" style="background:linear-gradient(135deg,#7A9E8E,#2C4A3E);">ML</div>
+          <div class="card-info">
+            <div class="card-name">Maria Lawson</div>
+            <div class="card-business">Blue Ridge Clean Co.</div>
+            <span class="card-category">Cleaning Services</span>
+          </div>
+        </div>
+        <p class="card-bio">Residential and Airbnb turnover cleaning specialist. Known for reliability, consistency, and excellent communication. Brings her own supplies. Fully insured.</p>
+        <div class="card-badges">
+          <span class="badge badge-verified">✓ Verified Pro</span>
+          <span class="badge badge-insured">✓ Insured</span>
+          <span class="badge badge-responsive">⟳ Responsive Pro</span>
+          <span class="badge badge-community">★ Community Recommended</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-area">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Shannondale · Harpers Ferry · Shepherdstown
+          </div>
+          <button class="card-contact">Contact</button>
+        </div>
+        <div class="card-member">On the Shortlist since January 2025</div>
+      </div>
+    </div>
+
+    <!-- VERIFIED PRO: Electrical -->
+    <div class="card"
+         data-cat="electrical"
+         data-areas="eastern panhandle wide harpers ferry martinsburg"
+         data-name="kevin pryor pryor electric electrical panel generator ev charger">
+      <div class="card-tier-bar"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-avatar" style="background:linear-gradient(135deg,#4a7c9e,#2c5f7a);">KP</div>
+          <div class="card-info">
+            <div class="card-name">Kevin Pryor</div>
+            <div class="card-business">Pryor Electric LLC</div>
+            <span class="card-category">Electrical</span>
+          </div>
+        </div>
+        <p class="card-bio">Licensed master electrician serving Jefferson and Berkeley Counties for 18 years. Panel upgrades, generator hookups, and EV charger installations a specialty.</p>
+        <div class="card-badges">
+          <span class="badge badge-verified">✓ Verified Pro</span>
+          <span class="badge badge-insured">✓ Licensed &amp; Insured</span>
+          <span class="badge badge-emergency">⚡ Emergency Available</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-area">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Eastern Panhandle Wide
+          </div>
+          <button class="card-contact">Contact</button>
+        </div>
+        <div class="card-member">On the Shortlist since February 2025</div>
+      </div>
+    </div>
+
+    <!-- COMMUNITY TRUSTED: Hauling -->
+    <div class="card community-trusted"
+         data-cat="hauling"
+         data-areas="shannondale harpers ferry charles town"
+         data-name="bill whitaker bill's hauling junk removal trash hauling cleanout">
+      <div class="card-tier-bar community"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-avatar" style="background:linear-gradient(135deg,#8B6914,#C4973A);">BW</div>
+          <div class="card-info">
+            <div class="card-name">Bill's Hauling</div>
+            <div class="card-business">Bill Whitaker</div>
+            <span class="card-category">Junk &amp; Trash Removal</span>
+          </div>
+        </div>
+        <p class="card-bio">Affordable, reliable junk removal, trash hauling, and cleanouts. Bill has served Shannondale and surrounding communities for over a decade. Always on time.</p>
+        <div class="card-badges">
+          <span class="badge badge-community">★ Community Trusted</span>
+          <span class="badge badge-local">◆ Local Resident</span>
+        </div>
+        <div class="vouch-block">
+          <div class="vouch-count">★ Vouched by 8 Shannondale Neighbors</div>
+          <div class="vouch-quote">"Best prices around, never a no-show. Highly recommend." — S. Brennan</div>
+        </div>
+        <div class="card-footer">
+          <div class="card-area">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Shannondale · Harpers Ferry · Charles Town
+          </div>
+          <button class="card-contact">Contact</button>
+        </div>
+        <div class="card-member">On the Shortlist since May 2025</div>
+      </div>
+    </div>
+
+    <!-- VERIFIED PRO: Handyman -->
+    <div class="card"
+         data-cat="handyman"
+         data-areas="harpers ferry shannondale bolivar"
+         data-name="al tanner appalachian handyman repairs carpentry deck">
+      <div class="card-tier-bar"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-avatar" style="background:linear-gradient(135deg,#5a7a4a,#3d6b5c);">AT</div>
+          <div class="card-info">
+            <div class="card-name">Appalachian Handyman</div>
+            <div class="card-business">Al Tanner</div>
+            <span class="card-category">Handyman &amp; Repairs</span>
+          </div>
+        </div>
+        <p class="card-bio">General repairs, carpentry, door and window work, deck maintenance, and odd jobs. Honest estimates, clean work, and good communication. Fully insured.</p>
+        <div class="card-badges">
+          <span class="badge badge-verified">✓ Verified Pro</span>
+          <span class="badge badge-insured">✓ Insured</span>
+          <span class="badge badge-community">★ Community Recommended</span>
+          <span class="badge badge-local">◆ Local Resident</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-area">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Harpers Ferry · Shannondale · Bolivar
+          </div>
+          <button class="card-contact">Contact</button>
+        </div>
+        <div class="card-member">On the Shortlist since March 2025</div>
+      </div>
+    </div>
+
+    <!-- VERIFIED PRO: HVAC -->
+    <div class="card"
+         data-cat="hvac"
+         data-areas="charles town martinsburg harpers ferry shepherdstown"
+         data-name="summit hvac heating cooling air conditioning heat pump">
+      <div class="card-tier-bar"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-avatar" style="background:linear-gradient(135deg,#5C6B74,#2A2A2A);">SC</div>
+          <div class="card-info">
+            <div class="card-name">Summit Climate Control</div>
+            <div class="card-business">Steve Calhoun</div>
+            <span class="card-category">HVAC</span>
+          </div>
+        </div>
+        <p class="card-bio">Full-service heating and cooling for Eastern Panhandle homes. Heat pump installation, mini-split systems, and annual maintenance contracts available.</p>
+        <div class="card-badges">
+          <span class="badge badge-verified">✓ Verified Pro</span>
+          <span class="badge badge-insured">✓ Licensed &amp; Insured</span>
+          <span class="badge badge-emergency">⚡ Emergency Available</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-area">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Charles Town · Martinsburg · Shepherdstown
+          </div>
+          <button class="card-contact">Contact</button>
+        </div>
+        <div class="card-member">On the Shortlist since February 2025</div>
+      </div>
+    </div>
+
+    <!-- VERIFIED PRO: Painting -->
+    <div class="card"
+         data-cat="painting"
+         data-areas="shepherdstown charles town harpers ferry"
+         data-name="ridge line painting interior exterior painter">
+      <div class="card-tier-bar"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-avatar" style="background:linear-gradient(135deg,#7a4a3a,#A0522D);">JP</div>
+          <div class="card-info">
+            <div class="card-name">J. Price Painting</div>
+            <div class="card-business">James Price</div>
+            <span class="card-category">Painting</span>
+          </div>
+        </div>
+        <p class="card-bio">Interior and exterior painting for residential homes. Clean work, detailed prep, and reliable scheduling. Local to the Eastern Panhandle for 12 years.</p>
+        <div class="card-badges">
+          <span class="badge badge-verified">✓ Verified Pro</span>
+          <span class="badge badge-insured">✓ Insured</span>
+          <span class="badge badge-local">◆ Local Resident</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-area">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Shepherdstown · Charles Town · Harpers Ferry
+          </div>
+          <button class="card-contact">Contact</button>
+        </div>
+        <div class="card-member">On the Shortlist since April 2025</div>
+      </div>
+    </div>
+
+    <!-- COMMUNITY TRUSTED: Landscaping -->
+    <div class="card community-trusted"
+         data-cat="landscaping"
+         data-areas="martinsburg berkeley springs"
+         data-name="green thumb landscaping yard mowing grass">
+      <div class="card-tier-bar community"></div>
+      <div class="card-body">
+        <div class="card-top">
+          <div class="card-avatar" style="background:linear-gradient(135deg,#4a7a3a,#6a9a5a);">TR</div>
+          <div class="card-info">
+            <div class="card-name">Tommy's Yard Works</div>
+            <div class="card-business">Tommy Reeves</div>
+            <span class="card-category">Landscaping &amp; Lawn Care</span>
+          </div>
+        </div>
+        <p class="card-bio">Dependable lawn mowing, trimming, and yard cleanup for the Martinsburg area. Affordable rates, friendly service, never misses a scheduled visit.</p>
+        <div class="card-badges">
+          <span class="badge badge-community">★ Community Trusted</span>
+          <span class="badge badge-local">◆ Local Resident</span>
+          <span class="badge badge-responsive">⟳ Responsive Pro</span>
+        </div>
+        <div class="vouch-block">
+          <div class="vouch-count">★ Vouched by 6 Community Neighbors</div>
+          <div class="vouch-quote">"Tommy is great — always on time and very reasonable." — D. Harris</div>
+        </div>
+        <div class="card-footer">
+          <div class="card-area">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Martinsburg · Berkeley Springs
+          </div>
+          <button class="card-contact">Contact</button>
+        </div>
+        <div class="card-member">On the Shortlist since May 2025</div>
+      </div>
+    </div>
+
+    <!-- No results message -->
+    <div class="no-results" id="no-results">
+      <div style="font-size:2rem; margin-bottom:1rem;">🔍</div>
+      <h3 style="font-family:'Playfair Display',serif; color:var(--forest); margin-bottom:0.5rem;">No providers found</h3>
+      <p>Try adjusting your search or filters — or <a href="contact.html" style="color:var(--forest);">contact us</a> to suggest a provider.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-section">
+  <div class="disclaimer-inner">
+    <p class="disclaimer-text">Shannondale Shortlist reviews contractor applications and collects documentation in good faith. Listings represent information provided at time of application and independently reviewed where possible. Shannondale Shortlist does not guarantee the quality, licensure, or performance of any listed provider. Homeowners are encouraged to verify credentials independently, request written contracts, and perform their own due diligence before hiring. All agreements and pricing are directly between the homeowner and the service provider.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Shannondale Shortlist</div>
+        <div class="footer-tagline">Only the good ones make the list.</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Directory</h4>
+          <ul>
+            <li><a href="directory.html">Find a Pro</a></li>
+            <li><a href="directory.html">All Categories</a></li>
+            <li><a href="directory.html">Service Areas</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>For Providers</h4>
+          <ul>
+            <li><a href="join.html">Apply to Join</a></li>
+            <li><a href="how-it-works.html">How Vetting Works</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://facebook.com" target="_blank">Facebook Group</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Shannondale Shortlist · Harpers Ferry, WV</span>
+      <span>Privacy Policy · Terms of Use</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const pills   = document.querySelectorAll('.pill');
+  const cards   = document.querySelectorAll('#provider-grid .card');
+  const searchInput = document.getElementById('search-input');
+  const areaFilter  = document.getElementById('area-filter');
+  const clearBtn    = document.getElementById('clear-btn');
+  const countEl     = document.getElementById('result-count');
+  const noResults   = document.getElementById('no-results');
+
+  let activeCat = 'all';
+
+  function filterCards() {
+    const query = searchInput.value.toLowerCase().trim();
+    const area  = areaFilter.value.toLowerCase().trim();
+    let visible = 0;
+
+    cards.forEach(card => {
+      if (card.id === 'no-results') return;
+      const cat      = card.dataset.cat   || '';
+      const areas    = card.dataset.areas  || '';
+      const name     = card.dataset.name   || '';
+
+      const catMatch  = activeCat === 'all' || cat === activeCat;
+      const areaMatch = !area || areas.includes(area.toLowerCase());
+      const textMatch = !query || name.includes(query) || cat.includes(query);
+
+      if (catMatch && areaMatch && textMatch) {
+        card.style.display = ''; visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+    countEl.textContent = visible === cards.length
+      ? 'Showing all providers'
+      : `Showing ${visible} provider${visible !== 1 ? 's' : ''}`;
+  }
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      activeCat = pill.dataset.cat;
+      filterCards();
+    });
+  });
+
+  searchInput.addEventListener('input', filterCards);
+  areaFilter.addEventListener('change', filterCards);
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    areaFilter.value  = '';
+    activeCat = 'all';
+    pills.forEach(p => p.classList.remove('active'));
+    document.querySelector('[data-cat="all"]').classList.add('active');
+    filterCards();
+  });
+
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('main-nav').classList.toggle('nav-mobile-open');
+  });
+</script>
+</body>
+</html>

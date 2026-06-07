@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — Shannondale Shortlist</title>
+<meta name="description" content="Learn how the Shannondale Shortlist vets providers, what each badge means, and how the three-tier system works.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hiw-wrap { max-width:900px; margin:0 auto; padding:4rem 2rem 5rem; }
+
+  /* Process Steps */
+  .process { margin:4rem 0; }
+  .process-steps { display:flex; flex-direction:column; gap:0; margin-top:2.5rem; }
+  .process-step {
+    display:grid; grid-template-columns:60px 1fr;
+    gap:1.5rem; position:relative;
+  }
+  .process-step:not(:last-child)::after {
+    content:'';
+    position:absolute; left:29px; top:60px;
+    width:2px; height:calc(100% - 20px);
+    background:var(--border);
+  }
+  .process-num {
+    width:60px; height:60px; border-radius:50%;
+    background:var(--forest); color:var(--cream);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-size:1.25rem; font-weight:700;
+    flex-shrink:0; position:relative; z-index:1;
+    margin-bottom:2rem;
+  }
+  .process-content { padding-bottom:2.5rem; }
+  .process-title {
+    font-family:'Playfair Display',serif;
+    font-size:1.2rem; font-weight:600;
+    color:var(--charcoal); margin-bottom:0.5rem;
+    padding-top:0.9rem;
+  }
+  .process-desc { font-size:0.9rem; color:var(--slate); line-height:1.75; font-weight:300; }
+  .process-detail {
+    margin-top:0.75rem;
+    background:var(--cream); border-radius:6px;
+    padding:0.875rem 1rem; border:1px solid var(--border);
+    font-size:0.82rem; color:var(--slate); line-height:1.7;
+  }
+  .process-detail ul { padding-left:1.25rem; margin-top:0.3rem; }
+  .process-detail li { margin-bottom:0.25rem; }
+
+  /* Badge guide */
+  .badges-section { margin:4rem 0; }
+  .badge-guide { display:flex; flex-direction:column; gap:1rem; margin-top:2rem; }
+  .badge-row {
+    background:white; border-radius:8px;
+    padding:1.25rem 1.5rem; border:1px solid var(--border);
+    display:flex; gap:1.25rem; align-items:flex-start;
+    flex-wrap:wrap;
+  }
+  .badge-row-badge { flex-shrink:0; padding-top:0.1rem; }
+  .badge-row-info {}
+  .badge-row-title {
+    font-size:0.875rem; font-weight:500;
+    color:var(--charcoal); margin-bottom:0.25rem;
+  }
+  .badge-row-desc { font-size:0.82rem; color:var(--slate); line-height:1.65; font-weight:300; }
+
+  /* FAQ */
+  .faq-section { margin:4rem 0; }
+  .faq-list { margin-top:2rem; display:flex; flex-direction:column; gap:0; }
+  .faq-item {
+    border-bottom:1px solid var(--border);
+  }
+  .faq-item:first-child { border-top:1px solid var(--border); }
+  .faq-q {
+    padding:1.25rem 0;
+    font-size:0.95rem; font-weight:500;
+    color:var(--forest); cursor:pointer;
+    display:flex; justify-content:space-between;
+    align-items:center; gap:1rem;
+    list-style:none;
+    user-select:none;
+  }
+  .faq-q::after { content:'+'; font-size:1.25rem; color:var(--gold); flex-shrink:0; transition:transform 0.2s; }
+  .faq-item.open .faq-q::after { transform:rotate(45deg); }
+  .faq-a {
+    font-size:0.875rem; color:var(--slate);
+    line-height:1.8; font-weight:300;
+    max-height:0; overflow:hidden;
+    transition:max-height 0.3s ease, padding 0.2s;
+  }
+  .faq-item.open .faq-a { max-height:300px; padding-bottom:1.25rem; }
+
+  /* Homeowner tips */
+  .tips-box {
+    background:var(--forest); border-radius:12px;
+    padding:2.5rem; margin-top:4rem; color:var(--cream);
+  }
+  .tips-box h3 {
+    font-family:'Playfair Display',serif;
+    font-size:1.4rem; font-weight:600; margin-bottom:0.5rem;
+  }
+  .tips-box p { color:rgba(247,243,236,0.65); font-size:0.875rem; margin-bottom:1.5rem; font-weight:300; }
+  .tips-list { list-style:none; display:flex; flex-direction:column; gap:0.75rem; }
+  .tips-list li {
+    display:flex; gap:0.75rem;
+    font-size:0.875rem; color:rgba(247,243,236,0.8); line-height:1.6;
+  }
+  .tips-list li::before {
+    content:'→'; color:var(--gold); flex-shrink:0; font-weight:600;
+  }
+</style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">S</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Shannondale Shortlist</span>
+      <span class="nav-logo-tagline">Harpers Ferry Area</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="directory.html">Find a Pro</a></li>
+    <li><a href="how-it-works.html" class="active">How It Works</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="join.html" class="nav-cta">Join the List</a></li>
+  </ul>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-eyebrow">Transparency First</div>
+  <h1>How the <em>Shortlist</em><br>Really Works</h1>
+  <p>We believe you deserve to know exactly how providers are vetted, what each badge means, and what we can — and can't — guarantee.</p>
+</section>
+
+<div class="hiw-wrap">
+
+  <!-- THREE TIERS -->
+  <div style="margin-bottom:4rem;">
+    <div class="section-label">The Tier System</div>
+    <h2 class="section-title">Three Levels of Trust</h2>
+    <p class="section-sub">Every provider on the Shortlist falls into one of three tiers. Each tier is honest about what was verified and what wasn't.</p>
+    <div class="tiers-grid" style="margin-top:2rem;">
+      <div class="tier-card verified">
+        <div class="tier-icon v">✓</div>
+        <div class="tier-title">Verified Pro</div>
+        <p class="tier-desc">For licensed trades and formally operating businesses who have submitted documentation.</p>
+        <ul class="tier-list">
+          <li>Application personally reviewed</li>
+          <li>License status checked where applicable</li>
+          <li>Certificate of insurance on file</li>
+          <li>References reviewed</li>
+          <li>Best for electrical, plumbing, HVAC &amp; structural</li>
+        </ul>
+      </div>
+      <div class="tier-card community">
+        <div class="tier-icon c">★</div>
+        <div class="tier-title">Community Trusted</div>
+        <p class="tier-desc">For neighborhood gems vouched for by real, named neighbors — no formal credentials required.</p>
+        <ul class="tier-list">
+          <li>Minimum 5 verified neighbor endorsements</li>
+          <li>Named vouches on provider profile</li>
+          <li>Application reviewed for red flags</li>
+          <li>Licensing &amp; insurance not verified</li>
+          <li>Best for lawn care, hauling, cleaning &amp; general help</li>
+        </ul>
+      </div>
+      <div class="tier-card founders-tier">
+        <div class="tier-icon f">⭐</div>
+        <div class="tier-title">Founder's Pick</div>
+        <p class="tier-desc">Reserved for providers personally hired and recommended by Lorelai &amp; Michael. Rare by design.</p>
+        <ul class="tier-list">
+          <li>Personally hired by the founders</li>
+          <li>Personal quote on every profile</li>
+          <li>Founders' reputation behind every pick</li>
+          <li>Never given lightly — intentionally rare</li>
+          <li>The highest trust signal on the Shortlist</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS STEPS -->
+  <div class="process">
+    <div class="section-label">Our Review Process</div>
+    <h2 class="section-title">What Happens After Someone Applies</h2>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="process-num">1</div>
+        <div class="process-content">
+          <div class="process-title">Provider Submits an Application</div>
+          <p class="process-desc">Every provider fills out a detailed application covering their services, service areas, experience, credentials, and references. Community Trusted applicants also need a minimum of 5 neighbor nominations.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">2</div>
+        <div class="process-content">
+          <div class="process-title">We Review It Personally</div>
+          <p class="process-desc">A real person — not software — reads every application. We look at the full picture: years in business, service area, how they describe their work, and whether anything raises a flag.</p>
+          <div class="process-detail">
+            For Verified Pro applicants, we also:<br>
+            <ul>
+              <li>Check WV contractor license status where applicable</li>
+              <li>Request and review a certificate of insurance</li>
+              <li>Contact at least one reference</li>
+              <li>Search for any public complaints or concerns</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">3</div>
+        <div class="process-content">
+          <div class="process-title">We Reach a Decision</div>
+          <p class="process-desc">We approve, ask for more information, or respectfully decline. Every applicant receives a personal response — we don't ghost providers any more than we want them to ghost homeowners.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">4</div>
+        <div class="process-content">
+          <div class="process-title">Approved Providers Get Listed</div>
+          <p class="process-desc">Approved providers are added to the directory with the badges that reflect exactly what was verified. Nothing is implied beyond what's stated.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <div class="process-num">5</div>
+        <div class="process-content">
+          <div class="process-title">Ongoing Review</div>
+          <p class="process-desc">Listings aren't permanent. We check in annually, update insurance and license information, and take community concerns seriously. Providers who receive consistent complaints can be removed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BADGE GUIDE -->
+  <div class="badges-section">
+    <div class="section-label">Badge Reference</div>
+    <h2 class="section-title">What Each Badge Means</h2>
+    <div class="badge-guide">
+      <div class="badge-row">
+        <div class="badge-row-badge"><span class="badge badge-founders">⭐ Founder's Pick</span></div>
+        <div class="badge-row-info">
+          <div class="badge-row-title">Personally used and recommended by Lorelai &amp; Michael</div>
+          <p class="badge-row-desc">The rarest badge on the Shortlist. Given only to providers the founders have personally hired and would recommend to their closest friends and family. Every Founder's Pick includes a personal note explaining why.</p>
+        </div>
+      </div>
+      <div class="badge-row">
+        <div class="badge-row-badge"><span class="badge badge-verified">✓ Verified Pro</span></div>
+        <div class="badge-row-info">
+          <div class="badge-row-title">Application reviewed, documentation submitted</div>
+          <p class="badge-row-desc">This provider has gone through our full review process. Applicable to licensed trades. Does not imply guaranteed work quality — it means we've done due diligence on their credentials.</p>
+        </div>
+      </div>
+      <div class="badge-row">
+        <div class="badge-row-badge"><span class="badge badge-insured">✓ Licensed &amp; Insured</span></div>
+        <div class="badge-row-info">
+          <div class="badge-row-title">License checked and certificate of insurance on file</div>
+          <p class="badge-row-desc">We have received and reviewed documentation at time of listing. Homeowners should always request a current certificate of insurance directly before work begins.</p>
+        </div>
+      </div>
+      <div class="badge-row">
+        <div class="badge-row-badge"><span class="badge badge-community">★ Community Trusted</span></div>
+        <div class="badge-row-info">
+          <div class="badge-row-title">Vouched for by 5 or more named community neighbors</div>
+          <p class="badge-row-desc">This provider has earned genuine endorsements from real, named residents. Licensing and insurance are not verified for Community Trusted providers — this badge reflects community reputation, not credentials.</p>
+        </div>
+      </div>
+      <div class="badge-row">
+        <div class="badge-row-badge"><span class="badge badge-local">◆ Local Resident</span></div>
+        <div class="badge-row-info">
+          <div class="badge-row-title">Lives or is based in the Eastern Panhandle area</div>
+          <p class="badge-row-desc">This provider is a local community member — not an out-of-area company serving this region remotely.</p>
+        </div>
+      </div>
+      <div class="badge-row">
+        <div class="badge-row-badge"><span class="badge badge-responsive">⟳ Responsive Pro</span></div>
+        <div class="badge-row-info">
+          <div class="badge-row-title">Known for reliable communication and follow-through</div>
+          <p class="badge-row-desc">Earned based on community feedback about communication habits. Addresses the #1 homeowner frustration: contractors who don't respond or follow through.</p>
+        </div>
+      </div>
+      <div class="badge-row">
+        <div class="badge-row-badge"><span class="badge badge-emergency">⚡ Emergency Available</span></div>
+        <div class="badge-row-info">
+          <div class="badge-row-title">Willing to take urgent or emergency calls</div>
+          <p class="badge-row-desc">Provider has indicated they are available for urgent situations. Availability not guaranteed — always call ahead for emergency situations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-section">
+    <div class="section-label">Common Questions</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Is the Shortlist free for homeowners?</div>
+        <div class="faq-a">Yes — always. Browsing the directory, contacting providers, and using the Shortlist as a resource will never cost homeowners anything.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can providers pay to be listed or ranked higher?</div>
+        <div class="faq-a">No. Listings are earned through the vetting process, not purchased. If we ever introduce optional provider fees in the future, they will never affect placement, badge status, or ranking in any way.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if I have a bad experience with a listed provider?</div>
+        <div class="faq-a">Please contact us directly. We take community feedback seriously. Providers with consistent or serious complaints can be reviewed and removed from the Shortlist. We are not mediators and cannot resolve disputes — but we will always listen and act when the community's trust is at stake.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does the Shortlist guarantee any provider's work?</div>
+        <div class="faq-a">No. The Shortlist is an informational directory. We do our best to vet providers honestly and thoroughly, but we cannot guarantee work quality, pricing, or outcomes. All agreements are directly between the homeowner and the provider.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I nominate someone for the Community Trusted tier?</div>
+        <div class="faq-a">Send us a message through the Contact page or post in our Facebook community group. We'll reach out to the provider and begin collecting the required neighbor endorsements.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How often are listings reviewed and updated?</div>
+        <div class="faq-a">We do a full review of all listings annually — updating insurance and license information, checking in with providers, and incorporating any community feedback received throughout the year.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOMEOWNER TIPS -->
+  <div class="tips-box">
+    <h3>5 Things to Do Before Hiring Any Contractor</h3>
+    <p>Even with a trusted listing, your own due diligence matters. Here's what we always recommend:</p>
+    <ul class="tips-list">
+      <li>Ask for a current certificate of insurance — don't just take their word for it</li>
+      <li>Get a written estimate before any work begins, no matter how small the job</li>
+      <li>Confirm they'll pull the required permits for the work (this protects you legally)</li>
+      <li>Ask for at least one local reference from a recent, similar job</li>
+      <li>Never pay the full amount upfront — a reasonable deposit is standard, full payment is not</li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-section">
+  <div class="disclaimer-inner">
+    <p class="disclaimer-text">Shannondale Shortlist reviews contractor applications and collects documentation in good faith. Listings represent information provided at time of application and independently reviewed where possible. Shannondale Shortlist does not guarantee the quality, licensure, or performance of any listed provider. Homeowners are encouraged to verify credentials independently, request written contracts, and perform their own due diligence before hiring. All agreements and pricing are directly between the homeowner and the service provider.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Shannondale Shortlist</div>
+        <div class="footer-tagline">Only the good ones make the list.</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Directory</h4>
+          <ul>
+            <li><a href="directory.html">Find a Pro</a></li>
+            <li><a href="directory.html">All Categories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>For Providers</h4>
+          <ul>
+            <li><a href="join.html">Apply to Join</a></li>
+            <li><a href="how-it-works.html">How Vetting Works</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="https://facebook.com" target="_blank">Facebook Group</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Shannondale Shortlist · Harpers Ferry, WV</span>
+      <span>Privacy Policy · Terms of Use</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('main-nav').classList.toggle('nav-mobile-open');
+  });
+</script>
+</body>
+</html>
