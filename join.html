@@ -122,7 +122,7 @@
     <div class="nav-logo-mark">S</div>
     <div class="nav-logo-text">
       <span class="nav-logo-name">Shannondale Shortlist</span>
-      <span class="nav-logo-tagline">Harpers Ferry Area</span>
+      <span class="nav-logo-tagline">Shannondale, WV</span>
     </div>
   </a>
   <ul class="nav-links">
@@ -148,7 +148,7 @@
     <div class="join-form-title">Provider Application</div>
     <p class="join-form-sub">Please fill out the form below as completely as possible. The more context you give us, the better we can understand your work and represent you accurately on the Shortlist.</p>
 
-    <form id="join-form">
+    <form id="join-form" action="https://formspree.io/f/xaqzogod" method="POST">
 
       <!-- ABOUT YOU -->
       <div class="form-section-title">About You</div>
@@ -156,28 +156,28 @@
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Your Name <span>*</span></label>
-          <input class="form-input" type="text" placeholder="First and last name" required>
+          <input class="form-input" type="text" name="name" placeholder="First and last name" required>
         </div>
         <div class="form-group">
           <label class="form-label">Business Name</label>
-          <input class="form-input" type="text" placeholder="If different from your name">
+          <input class="form-input" type="text" name="business_name" placeholder="If different from your name">
         </div>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Phone Number <span>*</span></label>
-          <input class="form-input" type="tel" placeholder="Best number to reach you" required>
+          <input class="form-input" type="tel" name="phone" placeholder="Best number to reach you" required>
         </div>
         <div class="form-group">
           <label class="form-label">Email Address <span>*</span></label>
-          <input class="form-input" type="email" placeholder="your@email.com" required>
+          <input class="form-input" type="email" name="email" placeholder="your@email.com" required>
         </div>
       </div>
 
       <div class="form-group">
         <label class="form-label">How long have you been in business? <span>*</span></label>
-        <select class="form-select" required>
+        <select class="form-select" name="years_in_business" required>
           <option value="">Select one</option>
           <option>Less than 1 year</option>
           <option>1–3 years</option>
@@ -188,12 +188,24 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label">Are you a local resident of the Eastern Panhandle area?</label>
+        <label class="form-label">Are you a Shannondale resident?</label>
         <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="local" value="yes"> <span>Yes, I live in the area</span></label>
-          <label class="radio-item"><input type="radio" name="local" value="nearby"> <span>I'm based nearby and serve this area</span></label>
-          <label class="radio-item"><input type="radio" name="local" value="no"> <span>No, I travel to serve this area</span></label>
+          <label class="radio-item"><input type="radio" name="local" value="Yes — I live in Shannondale" onclick="toggleYearsField(true)"> <span>Yes — I live in Shannondale</span></label>
+          <label class="radio-item"><input type="radio" name="local" value="I live nearby in the area" onclick="toggleYearsField(false)"> <span>I live nearby in the Shannondale and Harpers Ferry area</span></label>
+          <label class="radio-item"><input type="radio" name="local" value="Based outside, serve this area" onclick="toggleYearsField(false)"> <span>I'm based outside the area but serve this community</span></label>
         </div>
+      </div>
+
+      <div class="form-group" id="years-field" style="display:none; background:rgba(196,151,58,0.06); border:1px solid rgba(196,151,58,0.25); border-radius:8px; padding:1rem 1.25rem;">
+        <label class="form-label" style="color:var(--forest);">How long have you lived in Shannondale?</label>
+        <div class="radio-group">
+          <label class="radio-item"><input type="radio" name="years_in_shannondale" value="Less than 1 year"> <span>Less than 1 year</span></label>
+          <label class="radio-item"><input type="radio" name="years_in_shannondale" value="1–3 years"> <span>1–3 years</span></label>
+          <label class="radio-item"><input type="radio" name="years_in_shannondale" value="3–5 years"> <span>3–5 years</span></label>
+          <label class="radio-item"><input type="radio" name="years_in_shannondale" value="5–10 years"> <span>5–10 years</span></label>
+          <label class="radio-item"><input type="radio" name="years_in_shannondale" value="10+ years — longtime resident"> <span>10+ years — longtime resident</span></label>
+        </div>
+        <p class="form-hint" style="margin-top:0.75rem;">Shannondale residents who are longtime community members may be eligible for the Shannondale Resident badge.</p>
       </div>
 
       <!-- SERVICES -->
@@ -201,51 +213,105 @@
 
       <div class="form-group">
         <label class="form-label">Primary service category <span>*</span></label>
-        <select class="form-select" required>
+        <select class="form-select" name="primary_category" required>
           <option value="">Select your main category</option>
-          <option>Handyman &amp; General Repairs</option>
-          <option>Plumbing</option>
-          <option>Electrical</option>
-          <option>HVAC / Heating &amp; Cooling</option>
-          <option>Landscaping &amp; Lawn Care</option>
-          <option>Cleaning Services</option>
-          <option>Junk &amp; Trash Removal</option>
-          <option>Painting (Interior / Exterior)</option>
-          <option>Roofing &amp; Gutters</option>
-          <option>Flooring &amp; Tile</option>
-          <option>Deck &amp; Fence</option>
-          <option>Tree Service &amp; Removal</option>
-          <option>Pressure Washing</option>
+          <optgroup label="Home Systems">
+            <option>Plumbing</option>
+            <option>Electrical</option>
+            <option>HVAC / Heating &amp; Cooling</option>
+            <option>Septic Services</option>
+            <option>Well &amp; Water Systems</option>
+          </optgroup>
+          <optgroup label="Exterior &amp; Property">
+            <option>Lawn Mowing &amp; Maintenance</option>
+            <option>Landscaping &amp; Design</option>
+            <option>Leaf Removal &amp; Cleanup</option>
+            <option>Tree Service &amp; Removal</option>
+            <option>Decks, Porches &amp; Carpentry</option>
+            <option>Concrete, Patios &amp; Hardscape</option>
+            <option>Driveways &amp; Gravel</option>
+            <option>Fencing</option>
+            <option>Roofing &amp; Gutters</option>
+            <option>Pressure Washing</option>
+          </optgroup>
+          <optgroup label="Site &amp; Land">
+            <option>Excavating &amp; Site Work</option>
+            <option>Topsoil, Mulch &amp; Gravel Delivery</option>
+            <option>Land Clearing</option>
+          </optgroup>
+          <optgroup label="Interior &amp; Repairs">
+            <option>Handyman &amp; General Repairs</option>
+            <option>Painting (Interior / Exterior)</option>
+            <option>Flooring &amp; Tile</option>
+            <option>Drywall &amp; Plastering</option>
+          </optgroup>
+          <optgroup label="Cleaning &amp; Household">
+            <option>House Cleaning</option>
+            <option>Airbnb &amp; Short-Term Rental Cleaning</option>
+            <option>Junk &amp; Trash Hauling</option>
+            <option>Moving Help</option>
+          </optgroup>
+          <optgroup label="Home &amp; Life Services">
+            <option>Pet Sitting &amp; Dog Walking</option>
+            <option>Catering &amp; Food Services</option>
+            <option>Party &amp; Event Rentals</option>
+            <option>Childcare &amp; Babysitting</option>
+          </optgroup>
           <option>Other</option>
         </select>
       </div>
 
       <div class="form-group">
         <label class="form-label">Additional services offered</label>
+        <p class="form-hint" style="margin-bottom:0.75rem;">Check all that apply.</p>
         <div class="checkbox-group">
-          <label class="checkbox-item"><input type="checkbox"> <span>Handyman &amp; General Repairs</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Plumbing</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Electrical</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>HVAC / Heating &amp; Cooling</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Landscaping &amp; Lawn Care</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Cleaning Services</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Junk &amp; Trash Removal</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Painting</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Roofing &amp; Gutters</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Emergency Available</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Plumbing"> <span>Plumbing</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Electrical"> <span>Electrical</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="HVAC"> <span>HVAC / Heating &amp; Cooling</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Septic Services"> <span>Septic Services</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Well &amp; Water Systems"> <span>Well &amp; Water Systems</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Lawn Mowing"> <span>Lawn Mowing &amp; Maintenance</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Landscaping"> <span>Landscaping &amp; Design</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Leaf Removal"> <span>Leaf Removal &amp; Cleanup</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Tree Service"> <span>Tree Service &amp; Removal</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Decks &amp; Carpentry"> <span>Decks, Porches &amp; Carpentry</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Concrete &amp; Patios"> <span>Concrete, Patios &amp; Hardscape</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Driveways &amp; Gravel"> <span>Driveways &amp; Gravel</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Fencing"> <span>Fencing</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Roofing &amp; Gutters"> <span>Roofing &amp; Gutters</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Pressure Washing"> <span>Pressure Washing</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Excavating &amp; Site Work"> <span>Excavating &amp; Site Work</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Topsoil &amp; Gravel Delivery"> <span>Topsoil, Mulch &amp; Gravel Delivery</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Land Clearing"> <span>Land Clearing</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Handyman &amp; Repairs"> <span>Handyman &amp; General Repairs</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Painting"> <span>Painting (Interior / Exterior)</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Flooring &amp; Tile"> <span>Flooring &amp; Tile</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Drywall"> <span>Drywall &amp; Plastering</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="House Cleaning"> <span>House Cleaning</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Airbnb Cleaning"> <span>Airbnb &amp; Short-Term Rental Cleaning</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Junk Hauling"> <span>Junk &amp; Trash Hauling</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Moving Help"> <span>Moving Help</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Pet Sitting"> <span>Pet Sitting &amp; Dog Walking</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Catering"> <span>Catering &amp; Food Services</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Party &amp; Event Rentals"> <span>Party &amp; Event Rentals</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Childcare"> <span>Childcare &amp; Babysitting</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="services[]" value="Emergency Available"> <span>Emergency Available</span></label>
         </div>
       </div>
 
       <div class="form-group">
         <label class="form-label">Service areas <span>*</span></label>
         <div class="checkbox-group">
-          <label class="checkbox-item"><input type="checkbox"> <span>Shannondale</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Harpers Ferry</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Charles Town</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Shepherdstown</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Martinsburg</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Berkeley Springs</span></label>
-          <label class="checkbox-item"><input type="checkbox"> <span>Eastern Panhandle Wide</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="Shannondale"> <span>Shannondale</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="Harpers Ferry"> <span>Harpers Ferry</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="Bolivar"> <span>Bolivar</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="Charles Town"> <span>Charles Town</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="Shepherdstown"> <span>Shepherdstown</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="Kearneysville"> <span>Kearneysville</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="Inwood"> <span>Inwood</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="Martinsburg"> <span>Martinsburg</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="Berkeley Springs"> <span>Berkeley Springs</span></label>
+          <label class="checkbox-item"><input type="checkbox" name="areas[]" value="All surrounding WV communities"> <span>All surrounding WV communities</span></label>
         </div>
       </div>
 
@@ -255,23 +321,23 @@
       <div class="form-group">
         <label class="form-label">Are you licensed for your trade?</label>
         <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="licensed" value="yes"> <span>Yes — I have a current WV contractor/trade license</span></label>
-          <label class="radio-item"><input type="radio" name="licensed" value="no"> <span>No — my work does not require a license</span></label>
-          <label class="radio-item"><input type="radio" name="licensed" value="na"> <span>Not applicable to my services</span></label>
+          <label class="radio-item"><input type="radio" name="licensed" value="Yes — current WV license"> <span>Yes — I have a current WV contractor/trade license</span></label>
+          <label class="radio-item"><input type="radio" name="licensed" value="No — not required"> <span>No — my work does not require a license</span></label>
+          <label class="radio-item"><input type="radio" name="licensed" value="Not applicable"> <span>Not applicable to my services</span></label>
         </div>
       </div>
 
       <div class="form-group">
         <label class="form-label">License number (if applicable)</label>
-        <input class="form-input" type="text" placeholder="WV license number">
+        <input class="form-input" type="text" name="license_number" placeholder="WV license number">
         <p class="form-hint">We will verify this through the WV Division of Labor.</p>
       </div>
 
       <div class="form-group">
         <label class="form-label">Do you carry general liability insurance?</label>
         <div class="radio-group">
-          <label class="radio-item"><input type="radio" name="insured" value="yes"> <span>Yes — I can provide a certificate of insurance</span></label>
-          <label class="radio-item"><input type="radio" name="insured" value="no"> <span>No — I am not currently insured</span></label>
+          <label class="radio-item"><input type="radio" name="insured" value="Yes — can provide certificate"> <span>Yes — I can provide a certificate of insurance</span></label>
+          <label class="radio-item"><input type="radio" name="insured" value="No — not currently insured"> <span>No — I am not currently insured</span></label>
         </div>
         <p class="form-hint">If yes, we will request your certificate of insurance by email after reviewing your application.</p>
       </div>
@@ -281,23 +347,23 @@
 
       <div class="form-group">
         <label class="form-label">Tell us about yourself and your work <span>*</span></label>
-        <textarea class="form-textarea" placeholder="A few sentences about your background, what you do, and what makes you someone neighbors can rely on…" required style="min-height:140px;"></textarea>
+        <textarea class="form-textarea" name="bio" placeholder="A few sentences about your background, what you do, and what makes you someone neighbors can rely on…" required style="min-height:140px;"></textarea>
         <p class="form-hint">This may appear as your bio on the Shortlist. Write as you'd want a neighbor to read it.</p>
       </div>
 
       <div class="form-group">
         <label class="form-label">References (at least one local reference requested)</label>
-        <textarea class="form-textarea" placeholder="Name, phone or email, and your relationship (e.g. past client, community member). One per line." style="min-height:100px;"></textarea>
+        <textarea class="form-textarea" name="references" placeholder="Name, phone or email, and your relationship (e.g. past client, community member). One per line." style="min-height:100px;"></textarea>
       </div>
 
       <div class="form-group">
         <label class="form-label">Website or social media (if any)</label>
-        <input class="form-input" type="text" placeholder="https://...">
+        <input class="form-input" type="text" name="website" placeholder="https://...">
       </div>
 
       <div class="form-group">
         <label class="form-label">How did you hear about the Shortlist?</label>
-        <select class="form-select">
+        <select class="form-select" name="referral_source">
           <option value="">Select one</option>
           <option>A neighbor or community member</option>
           <option>Facebook group or post</option>
@@ -310,10 +376,14 @@
 
       <div class="form-group">
         <label class="form-label">Anything else you'd like us to know?</label>
-        <textarea class="form-textarea" placeholder="Optional — any additional context, questions, or notes for us."></textarea>
+        <textarea class="form-textarea" name="additional_info" placeholder="Optional — any additional context, questions, or notes for us."></textarea>
       </div>
 
-      <button type="submit" class="form-submit">Submit My Application →</button>
+      <!-- Formspree hidden fields -->
+      <input type="hidden" name="_subject" value="New Shortlist Application — Shannondale Shortlist">
+      <input type="text" name="_gotcha" style="display:none">
+
+      <button type="submit" class="form-submit" id="join-submit-btn">Submit My Application →</button>
       <p class="form-agree">By submitting this application you confirm that all information provided is accurate to the best of your knowledge. Listing on the Shannondale Shortlist is subject to review and approval. We respond to all applications personally within 5–7 business days.</p>
 
     </form>
@@ -420,19 +490,52 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 Shannondale Shortlist · Harpers Ferry, WV</span>
+      <span>© 2025 Shannondale Shortlist · Shannondale, WV</span>
       <span>Privacy Policy · Terms of Use</span>
     </div>
   </div>
 </footer>
 
 <script>
-  document.getElementById('join-form').addEventListener('submit', function(e) {
+  function toggleYearsField(show) {
+    const field = document.getElementById('years-field');
+    field.style.display = show ? 'block' : 'none';
+    if (!show) {
+      document.querySelectorAll('input[name="years_in_shannondale"]').forEach(r => r.checked = false);
+    }
+  }
+
+  document.getElementById('join-form').addEventListener('submit', async function(e) {
     e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-    window.scrollTo({ top: document.querySelector('.join-form-wrap').offsetTop - 100, behavior: 'smooth' });
+    const btn = document.getElementById('join-submit-btn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    const data = new FormData(this);
+
+    try {
+      const response = await fetch(this.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        this.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        window.scrollTo({ top: document.querySelector('.join-form-wrap').offsetTop - 100, behavior: 'smooth' });
+      } else {
+        btn.textContent = 'Submit My Application →';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or contact us directly.');
+      }
+    } catch (err) {
+      btn.textContent = 'Submit My Application →';
+      btn.disabled = false;
+      alert('Something went wrong. Please check your connection and try again.');
+    }
   });
+
   document.getElementById('hamburger').addEventListener('click', () => {
     document.getElementById('main-nav').classList.toggle('nav-mobile-open');
   });
